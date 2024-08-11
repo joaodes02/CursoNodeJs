@@ -11,13 +11,14 @@ const usuario = {
 };
 
 const auth = true;
+const aprovado = false;
 
 app.get("/dashboard", (req, res) => {
   res.render("dashboard");
 });
 
 app.get("/", (req, res) => {
-  res.render("home", { usuario: usuario, auth });
+  res.render("home", { usuario: usuario, auth, aprovado });
 });
 
 app.listen(3000, () => {
