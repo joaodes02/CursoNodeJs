@@ -14,7 +14,20 @@ const auth = true;
 const aprovado = false;
 
 app.get("/dashboard", (req, res) => {
-  res.render("dashboard");
+  const itens = ["item A", "Item B", "Item C"];
+
+  res.render("dashboard", { itens });
+});
+
+app.get("/post", (req, res) => {
+  const post = {
+    title: "Aprendendo JS",
+    Categoria: "JS",
+    body: "Artigo para aprender sobre JS",
+    comentarios: 4,
+  };
+
+  res.render("blogpost", { post });
 });
 
 app.get("/", (req, res) => {
