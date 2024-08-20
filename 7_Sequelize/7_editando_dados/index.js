@@ -101,6 +101,7 @@ app.get("/", async (req, res) => {
 // connect
 conn
   .sync()
+  //.sync({ force: true })
   .then(() => {
     app.listen(3000);
   })
