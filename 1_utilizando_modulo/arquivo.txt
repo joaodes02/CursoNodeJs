@@ -1,1 +1,0 @@
-Lendo arquivo txt pelo fs // file system
