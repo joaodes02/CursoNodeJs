@@ -23,7 +23,7 @@ module.exports = class ToughController {
 
     product.save();
 
-    res.redirect("/");
+    res.redirect("/products");
   }
 
   static async getProduct(req, res) {

@@ -10,8 +10,8 @@ class Product {
     this.description = description;
   }
 
-  save() {
-    const product = conn.db().collection("products").insertOne({
+  async save() {
+    const product = await conn.db().collection("products").insertOne({
       name: this.name,
       image: this.image,
       price: this.price,
@@ -31,7 +31,8 @@ class Product {
     const product = await conn
       .db()
       .collection("products")
-      .findOne({ _id: new ObjectId(id) });
+      .findOne({ _id: ObjectId.createFromHexString(id) });
+
     return product;
   }
 }
