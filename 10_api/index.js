@@ -15,11 +15,16 @@ app.post("/createproduct", (req, res) => {
   const name = req.body.name;
   const price = req.body.price;
 
-  res.json({ message: `${name} ${price}` });
+  if (!name) {
+    res.status(422).json({ message: "o campo Nome não foi preenchido" });
+    return;
+  }
+
+  res.status(201).json({ message: `${name} ${price}` });
 });
 
 app.get("/", (req, res) => {
-  res.json({ message: "Primeira rota" });
+  res.status(200).json({ message: "Primeira rota" });
 });
 
 app.listen(3333);
